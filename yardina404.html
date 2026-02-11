@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>YARDINA — Delicious Vegetarian Delights</title>
+  <meta name="description" content="YARDINA - Delicious vegetarian Middle Eastern food. Falafel, wraps, plates, salads and more. Order for pickup or delivery.">
+
+  <style>
+    :root{--accent:#1a73e8;--dark:#0f172a;--muted:#64748b;--card:#ffffff}
+    *{box-sizing:border-box}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+      line-height:1.5;margin:0;color:var(--dark);
+      background:linear-gradient(180deg,#fbfdff,#f7fbfb);
+    }
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{
+      width:60px;height:60px;border-radius:12px;
+      background:linear-gradient(135deg,#1a73e8,#0b4bb3);
+      display:flex;align-items:center;justify-content:center;
+      color:white;font-weight:700;font-size:22px;
+    }
+    h1{font-size:28px;margin:0}
+    p.lead{color:var(--muted);margin:6px 0 0}
+    nav a{margin-left:14px;font-weight:600;color:var(--muted)}
+    nav a.cta-btn{color:white}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:18px}
+    .card{background:var(--card);border-radius:14px;padding:22px;box-shadow:0 6px 24px rgba(16,24,40,0.06)}
+    .cta-btn{
+      display:inline-block;background:var(--accent);color:white;
+      padding:12px 18px;border-radius:10px;font-weight:700;
+    }
+
+    .hero-image{margin-top:16px;border-radius:12px;overflow:hidden}
+    .hero-image img{width:100%;display:block;object-fit:cover;height:260px}
+
+    .section-title{margin:32px 0 8px;font-size:22px}
+    .small{font-size:13px;color:var(--muted)}
+
+    .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+    .menu-item{padding:16px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbffff);border:1px solid #eef6f6}
+    .menu-item h3{margin:8px 0 4px}
+    .price{font-weight:800;color:var(--accent);margin-top:4px}
+    .menu-item img{width:100%;border-radius:8px;margin-top:8px;object-fit:cover;height:140px}
+
+    .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+    .gallery-grid img{width:100%;border-radius:10px;object-fit:cover;height:120px}
+
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:12px}
+    .why-card{padding:14px;border-radius:10px;background:#f7fbff;border:1px solid #e2ecff}
+
+    .visit-grid{display:grid;grid-template-columns:2fr 1.2fr;gap:18px;margin-top:12px}
+
+    footer{margin-top:28px;padding:20px 0;color:var(--muted);display:flex;justify-content:space-between;align-items:center;font-size:13px}
+
+    /* form */
+    form input, form textarea, form select{
+      width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef0;font-size:14px;
+    }
+    form label{font-weight:700;font-size:13px;margin-top:8px;display:block}
+
+    /* sticky mobile order button */
+    .sticky-order{
+      display:none;
+      position:fixed;left:0;right:0;bottom:0;
+      background:rgba(15,23,42,0.96);
+      padding:10px 16px;
+      z-index:50;
+    }
+    .sticky-order a{
+      display:block;text-align:center;
+      background:var(--accent);color:white;
+      padding:12px 18px;border-radius:999px;font-weight:700;
+    }
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .menu-grid{grid-template-columns:repeat(2,1fr)}
+      .gallery-grid{grid-template-columns:repeat(3,1fr)}
+      .visit-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      .menu-grid{grid-template-columns:1fr}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+      header{flex-direction:column;align-items:flex-start;gap:10px}
+      .sticky-order{display:block}
+      body{padding-bottom:70px;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <div class="brand">
+        <div class="logo">Y</div>
+        <div>
+          <h1>YARDINA</h1>
+          <p class="lead">Delicious Vegetarian Delights — Fresh Middle Eastern flavors.</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#menu">Menu</a>
+        <a href="#visit">Visit Us</a>
+        <a href="#order" class="cta-btn">Order Now</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="card">
+          <h2>Falafel, wraps, plates & more — made fresh, vegetarian, and full of flavor.</h2>
+          <p class="small">
+            Comforting Middle Eastern vegetarian food, prepared with care — from crispy falafel and creamy hummus
+            to colorful salads, fries, and hearty plates.
+          </p>
+
+          <div class="hero-image">
+            <!-- Storefront / counter photo -->
+            <img src="images/storefront.jpg" alt="Yardina counter and vegetarian delights">
+          </div>
+
+          <p style="margin-top:16px">
+            <a href="#order" class="cta-btn">Order Now</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- ORDER FORM -->
+      <aside class="card" id="order">
+        <h3 style="margin-top:0">Place Your Food Order</h3>
+        <p class="small" style="margin-top:0;margin-bottom:8px;">
+          Orders are confirmed by phone or email. For same‑day orders, please call if you don’t receive a reply.
+        </p>
+
+        <form action="mailto:yardina404@outlook.com" method="post" enctype="text/plain">
+
+          <label>Your Name</label>
+          <input name="Customer Name" placeholder="Full name" required>
+
+          <label>Phone Number</label>
+          <input name="Phone" type="tel" placeholder="416‑000‑0000" required>
+
+          <label>Select Item</label>
+          <select name="Menu Item" required>
+            <option value="">Choose an item</option>
+            <option>Falafel Wrap — $8.99</option>
+            <option>Falafel Plate — $12.99</option>
+            <option>Combo Plate — $13.99</option>
+            <option>Noodles Box — $10.99</option>
+            <option>Fries — $3.99</option>
+            <option>Samosas (2 pcs) — $4.50</option>
+            <option>Baklava — $2.50</option>
+          </select>
+
+          <label>Quantity</label>
+          <input name="Quantity" type="number" min="1" value="1" required>
+
+          <label>Pickup or Delivery</label>
+          <select name="Order Type" required>
+            <option value="">Choose one</option>
+            <option>Pickup</option>
+            <option>Delivery (local)</option>
+          </select>
+
+          <label>Address (if delivery)</label>
+          <textarea name="Address" rows="2" placeholder="Unit / Street, City, Postal Code"></textarea>
+
+          <label>Notes / Special Instructions</label>
+          <textarea name="Notes" rows="3" placeholder="Extra tahini, no onions, spice level, etc."></textarea>
+
+          <button type="submit" class="cta-btn" style="border:none;cursor:pointer;margin-top:10px">
+            Submit Order by Email
+          </button>
+        </form>
+
+        <!-- Square Payment Placeholder -->
+        <a href="#"
+           class="cta-btn"
+           style="display:block;text-align:center;margin-top:16px;background:#1a73e8;opacity:0.6;pointer-events:none;">
+          Pay with Square (coming soon)
+        </a>
+      </aside>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu">
+      <h2 class="section-title">Our Menu</h2>
+
+      <div class="card">
+        <h3>Falafel & Wraps</h3>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <h3>Falafel Wrap</h3>
+            <p class="small">Crispy falafel, salad, sauces in a warm wrap.</p>
+            <p class="price">$8.99</p>
+            <img src="images/falafel-wrap.jpg" alt="Falafel wrap">
+          </div>
+
+          <div class="menu-item">
+            <h3>Shawarma‑Style Veggie Wrap</h3>
+            <p class="small">Marinated veggie strips, pickles, sauces.</p>
+            <p class="price">$9.49</p>
+            <img src="images/wrap-open.jpg" alt="Vegetarian shawarma-style wrap">
+          </div>
+
+          <div class="menu-item">
+            <h3>Noodles Box</h3>
+            <p class="small">Stir‑fried noodles with vegetables and spring rolls.</p>
+            <p class="price">$10.99</p>
+            <img src="images/noodles.jpg" alt="Noodles with vegetables and spring rolls">
+          </div>
+        </div>
+
+        <h3 style="margin-top:24px;">Plates & Combos</h3>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <h3>Falafel Plate</h3>
+            <p class="small">Falafel, rice, salad, chickpeas, pickles.</p>
+            <p class="price">$12.99</p>
+            <img src="images/falafel-plate.jpg" alt="Falafel plate with rice and salad">
+          </div>
+
+          <div class="menu-item">
+            <h3>Combo Plate</h3>
+            <p class="small">A bit of everything — rice, salad, falafel, dips.</p>
+            <p class="price">$13.99</p>
+            <img src="images/combo-plate.jpg" alt="Combo plate with rice, salad and falafel">
+          </div>
+
+          <div class="menu-item">
+            <h3>Chicken & Rice Plate</h3>
+            <p class="small">Grilled chicken over rice with salad and pickles.</p>
+            <p class="price">$13.99</p>
+            <img src="images/chicken-plate.jpg" alt="Chicken and rice plate with salad">
+          </div>
+        </div>
+
+        <h3 style="margin-top:24px;">Sides & Snacks</h3>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <h3>Fries</h3>
+            <p class="small">Golden, crispy fries with sauce.</p>
+            <p class="price">$3.99</p>
+            <img src="images/fries.jpg" alt="Fries with ketchup">
+          </div>
+
+          <div class="menu-item">
+            <h3>Samosas (2 pcs)</h3>
+            <p class="small">Crispy pastry filled with spiced vegetables.</p>
+            <p class="price">$4.50</p>
+            <img src="images/samosas.jpg" alt="Samosas in a takeout box">
+          </div>
+
+          <div class="menu-item">
+            <h3>Baklava</h3>
+            <p class="small">Sweet, flaky pastry with nuts and syrup.</p>
+            <p class="price">$2.50</p>
+            <img src="images/baklava.jpg" alt="Baklava dessert">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section>
+      <h2 class="section-title">Gallery</h2>
+      <div class="card">
+        <div class="gallery-grid">
+          <img src="images/falafel-plate.jpg" alt="Falafel plate">
+          <img src="images/combo-plate.jpg" alt="Combo plates">
+          <img src="images/chicken-plate.jpg" alt="Chicken and rice plate">
+          <img src="images/noodles.jpg" alt="Noodles box">
+          <img src="images/fries.jpg" alt="Fries">
+          <img src="images/samosas.jpg" alt="Samosas">
+          <img src="images/wrap-open.jpg" alt="Open wrap">
+          <img src="images/storefront.jpg" alt="Yardina counter">
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section>
+      <h2 class="section-title">Why Choose YARDINA</h2>
+      <div class="card">
+        <div class="why-grid">
+          <div class="why-card">
+            <h4>Fresh & Vegetarian</h4>
+            <p class="small">We focus on delicious vegetarian dishes with fresh ingredients and vibrant flavors.</p>
+          </div>
+          <div class="why-card">
+            <h4>Comfort Food, Middle Eastern Style</h4>
+            <p class="small">Falafel, plates, salads and snacks that feel homemade and satisfying.</p>
+          </div>
+          <div class="why-card">
+            <h4>Friendly & Local</h4>
+            <p class="small">Located in Thornhill, serving the community with care and consistency.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISIT US -->
+    <section id="visit">
+      <h2 class="section-title">Visit Us</h2>
+      <div class="card">
+        <div class="visit-grid">
+          <div>
+            <h3>Location</h3>
+            <p>
+              <strong>YARDINA — Delicious Vegetarian Delights</strong><br>
+              Unit 5 &amp; 6 — 2900 Steeles Avenue East<br>
+              Thornhill, Ontario
+            </p>
+            <p class="small">
+              Conveniently located on Steeles Avenue East — stop by for a quick lunch, dinner, or takeaway.
+            </p>
+
+            <h3 style="margin-top:16px;">Hours</h3>
+            <p>
+              <strong>Friday:</strong> 10:00 am – 6:00 pm<br>
+              <strong>Saturday:</strong> 10:00 am – 6:00 pm<br>
+              <strong>Sunday:</strong> 10:00 am – 6:00 pm
+            </p>
+            <p class="small">Open Friday to Sunday — contact us for catering or special orders.</p>
+          </div>
+
+          <div>
+            <h3>Contact</h3>
+            <p>
+              <strong>Phone:</strong> <a href="tel:+14168171625">416‑817‑1625</a><br>
+              <strong>Email:</strong> <a href="mailto:yardina404@outlook.com">yardina404@outlook.com</a>
+            </p>
+            <p class="small">
+              For larger orders or catering, please email or call in advance so we can prepare everything fresh.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>
+        <strong>YARDINA</strong><br>
+        <span>Unit 5 &amp; 6 — 2900 Steeles Avenue East, Thornhill, Ontario</span><br>
+        <span>Fri–Sun: 10:00 am – 6:00 pm</span>
+      </div>
+      <div>© YARDINA — Delicious Vegetarian Delights</div>
+    </footer>
+
+  </div>
+
+  <!-- Sticky mobile order button -->
+  <div class="sticky-order">
+    <a href="#order">Order Now from YARDINA</a>
+  </div>
+</body>
+</html>
